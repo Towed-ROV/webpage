@@ -84,17 +84,8 @@ Surjith S M / @surjithctly
             </div>
             <!--========== /.container-fluid ==========-->
         </nav>
-        <div class="top-banner row text-center fadeInOnLoad">
-            <div class="container">
-                <h2>Getting Started</h2>
-                <br>
-                <!-- <a href="#product-choose"
-                    class="btn btn-warning btn-lg visible-sm-inline-block visible-xs-inline-block">pre-order now</a>
-                <div class="row apple-watch">
-                    <img src="images/apple-watch.png" alt="" class="watch_img">
-                </div> -->
-            </div>
-        </div>
+
+
     </header>
 
 
@@ -104,466 +95,808 @@ Surjith S M / @surjithctly
     <div class="container">
         <div class="row">
             <div class="col-md-3 sidebar mysidenav">
-
                 <div class="row m0 widget widget-categories wow fadeInUp" style="position: fixed;">
                     <h4 class="widget-title">Index</h4>
                     <div class="row m0 widget-inner">
                         <ul class="nav categories">
-                            <li><a href="#Design">Design</a></li>
-                            <li><a href="#Structure">Structure</a></li>
+                            <li><a href="#Mechanical">Mechanical</a></li>
+                            <ul class="nav sub-categories">
+                                <li><a href="#Mechanical">Hydrodynamics</a></li>
+                                <li><a href="#Mechanical">Structural Design</a></li>
+                                <li><a href="#Mechanical">Motor Assembly</a></li>
+                                <li><a href="#Mechanical">Mountings</a></li>
+
+                            </ul>
                             <li><a href="#Electronics">Electronics</a></li>
-                            <li><a href="#GUI">GUI</a></li>
-                            <li><a href="#Sonar">Sonar</a></li>
-                            <li><a href="#Camera">Camera</a></li>
-                            <li><a href="#API">API</a></li>
+                            <ul class="nav sub-categories">
+                                <li><a href="#Electronics">Components</a></li>
+                                <li><a href="#Electronics">Schematics</a></li>
+                            </ul>
+                            <li><a href="#Software">Software</a></li>
+                            <ul class="nav sub-categories">
+                                <li><a href="#Software">GUI</a></li>
+                                <li><a href="#Software">API</a></li>
+                                <li><a href="#Software">Computer Vision</a></li>
+                            </ul>
+                            <li><a href="#Payloads">Payloads</a></li>
+                            <ul class="nav sub-categories">
+                                <li><a href="#Payloads">Sonar</a></li>
+                                <li><a href="#Payloads">Camera</a></li>
+                                <li><a href="#Payloads">Echo Sounder</a></li>
+                            </ul>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-9">
-                <div id="Design">
+                <div class="section-header-doc-top row fadeInOnLoad">
+
+                    <h2>Getting Started</h2>
+                    <br>
+                    <div class="Section-header-doc-top">
+                        <p>Here is the detailed documentation to help you build configure and run the Towed ROV</p>
+                    </div>
+
+                </div>
+                <div id="Mechanical">
                     <div class="row section-header-doc wow fadeInUp"
                         style="visibility: visible; animation-name: fadeInUp;">
-                        <h2>Design
+                        <h2>Mechanical Section
                         </h2>
+                        <p>
+                            This section explains the mechanical components of the ROV.
+                        </p>
+                    </div>
+                    <div class="work-process-doc">
+                        <h3>Hydrodynamics</h3>
+                        <p>Wings are the primary control surfaces of the Towed-ROV generating the necessary lift to
+                            maintain or achieve the desired depth. This guide can be used an aid in designing the
+                            lifting surface of the ROV.
+                            <br>
+
+                            <b>Hydrodynamic lift:</b> As a lifting element or foil (wings in this case) pierces a fluid
+                            at an angle relative to the flow, it creates a differential pressure between the top and
+                            bottom
+                            surfaces of the element. This pressure difference when integrated over the entire surface
+                            sums up to a net force called <b>"Lift"</b>. The direction of the force depends on the
+                            orientation of the lifting element.
+                            <br>
+
+                            <b>Angle of attack:</b> The relative angle between the lifting element's center line and
+                            direction of flow
+                        </p>
+
+                        <p>
+
+
+                            <b>Span:</b> The dimension of the lifting surface in the direction perpendicular to flow.
+                            <br>
+
+                            <b>Chord:</b> The dimension of the lifting surface in the direction of flow
+                            <br>
+
+                            <b>
+                                Stall angle:</b> The lift force of a foil increases with the angle of attack until a
+                            critical angle - called stall angle. Beyond stall angle, the lift generation capacity of a
+                            foil starts to decrease.
+
+                        </p>
+
+                        <p>
+                            <b>Aspect ratio:</b> The ratio of span to chord is called 'aspect ratio'. It is a very
+                            important
+                            design parameter in fluid dynamics. A lower aspect ratio (for a given wing area) improves
+                            the stalling range and therefore results in a higher achievable max. lift. But, at the same
+                            time it also increases the lift-induced drag. Similarly, a higher aspect ratio foil, though
+                            theoretically results in a higher lift coefficient, it stall prematurely and therefore has a
+                            lower achievable max. lift force. The stall performance and hence the lift generating
+                            capacity of a lower aspect ration foils seems to be better than its high AR counterpart.
+                            However, there will be a significant lift-induced drag in a low AR foil. For this reason, a
+                            high AR foil is preferred.
+
+                            <br>
+                            <b>Design rule 1:</b> Maintain high AR i.e., foil span > foil chord
+
+                            <br>
+                            <b>Torque due to lift:</b> The hydrodynamic lift force acts at an average distance of
+                            approx. 0.3c
+                            to 0.4c from the leading edge of the foil, where 'c' is the foil chord. Considering the
+                            average value of 0.35c for the foil axis, the maximum arm is 0.05c.
+
+                            <br>
+
+                            The torque due to lift is therefore, F * 0.05c .
+
+                            <br>
+
+                            <b>Viscous drag:</b> It is an another component of the hydrodynamic forces acting on the
+                            foil due to its movement in the fluid. While the lift force acts normal to the surface, drag
+                            force
+                            acts parallel to it. At low angles of attack, viscous or skin drag is the dominant component
+                            and can be reduced by selecting more streamlined profiles (unlike a flat plate)
+
+
+                            Profile geometries: Much of the discussion stated above is based on flat plate wing
+                            profiles. Though flat plates have a relatively low lift performance compared to many other
+                            streamlines geometries (like NACA profiles), their simple geometry and mathematical
+                            treatment makes them easy choices in prototype stages.
+                        </p>
+
+                        <h4>Online calculator:</h4>
+                        <p>A simple online calculator is made to aid the used in quick design
+                            of Towed ROV wings. The mathematical relations used in the calculator are based on
+                            literature available in similar applications in aerospace and marine domains. Therefore,
+                            they only provide a reasonable rough estimate of forces.
+
+                            <br>
+
+                            The online calculator can be found <a href="https://yourstruely.github.io/WingDesign/"
+                                target="_blank">here</a>
+                        </p>
+
+                        <h4>CFD Simulations
+                        </h4>
+                        <p>
+                            From the forces and moments calculations we can see that the correct estimation of drag
+                            force
+                            and its
+                            point of application are critical in solving the force equation and finding the optimum
+                            location for placing the towing point.
+                            <br>
+
+                            Net drag force on the ROV is a component of the hydrodynamic forces. It is usually derived
+                            by solving a set of non-linear partial differential equations called Navier Stokes which are
+                            solved by CFD solver packages.
+                            <br>
+
+                            For this project, we used SimScale. It is a browser based freemium tool, which can be easily
+                            opened from a browser and used for free (with limited computational resources that are
+                            sufficient for small scale usage).
+                            <br>
+
+                            We explain the geometric model, boundary conditions, meshing and simulation settings as
+                            below.
+
+                            <br>
+
+                            <!-- <b>Geometric model:</b> -->
+
+                            Below is the simplified model used for the flow simulation.
+
+                        <div>
+                            <img class="my-center-image" src="images/generic-model.png" alt="">
+                        </div>
+
+                        </p>
+                        <p><b>Note: </b>The model used for simulation is different from the final assembly which has
+                            more
+                            frame members for mounting other components. </p>
+
+                        <p><b>Bounding box:</b> It is the volume of fluid which is of interest in the simulation because
+                            it is not realistic to consider the whole fluid volume (in our case, the water body like
+                            lake or sea).
+                        </p>
+                        <div>
+                            <img class="my-center-image" src="images/bounding-box.png" alt="">
+                        </div>
+                        <p>
+                            <b>Boundary conditions:</b> Next important step is to input the boundary conditions. For
+                            this
+                            simulation, the below are used.
+                            <br>
+                            Inlet velocity - 2m/s
+                            <br>
+                            Outlet pressure - 1 bar
+                            <br>
+                            ROV body - Wall no-slip
+                            <br>
+                            Other faces - Wall slip
+                            <br>
+
+
+                            <b>Meshing:</b> A bi-resolution mesh boundary is defined with a coarse mesh on the outside
+                            with
+                            fine mesh closer to the ROV. This is to save on the calculation time without compromising
+                            too-much on the accuracy.
+                        </p>
+                        <p>
+
+                            <b>Results:</b>
+                            <br>
+                            Velocity field
+                        </p>
+                        <div>
+                            <img class="my-center-image" src="images/CFD-results.png" alt="">
+                        </div>
+
+
+                        <p>
+                            The force and moment plots are shown as below
+                            <br>
+                            Horizontal drag - 160 N
+                            <br>
+                            Vertical drag - 30 N
+                            <br>
+                            Transverse drag - 0 N (approx)
+                        </p>
+                        <div>
+                            <img class="my-center-image" src="images/CFD-result-graph.png" alt="">
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="work-process-doc">
+                        <h3>Structural Design</h3>
+                        <p>
+                            With inspiration from the exposed skeleton structure of quadcopters came the idea of using
+                            standardized aluminium profiles to create a open modular frame. This gave the project
+                            potential for rapid modification of frame structure and placement of the necessary
+                            components for pitch control
+
+                        </p>
+
+                    </div>
+                    <div class="container row col-md-12">
+                        <div class="m0 split-column wow fadeIn" data-wow-delay="0.3s">
+                            <div class="col-sm-6 image text-right">
+                                <img src="images/rspro-profile.png" alt="">
+                            </div>
+                            <div class="col-sm-6 texts">
+                                <div class="work-process-doc row m0">
+                                    <h3>Modular Structure Profiles</h3>
+                                    <p>The groved aluminum profiles make the structure modular and can be
+                                        adjusted according to any dimension.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m0 split-column wow fadeIn" data-wow-delay="0.6s">
+                            <div class="col-sm-6 col-sm-push-6 image">
+                                <img src="images/locking-nut.png" alt="">
+                            </div>
+                            <div class="col-sm-6 col-sm-pull-6 texts">
+                                <div class="work-process-doc row m0">
+                                    <h3>Locking Nuts</h3>
+                                    <p>The locking nuts enable to attach payloads and mountings at any suitable
+                                        place on the ROV. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work-process-doc" style="margin-top: 680px;">
+                        <h3>Pitch Mechanism</h3>
+                        <p>A pitch mechanism is developed that could incorporate the frame mounting brackets in the
+                            design. Due to uncertainty of material properties of having oil on one side and seawater on
+                            the other side of a PLA plastic wall of 8mm, some solutions were proposed.
+
+                        <ul>
+                            <li>The pitch mechanism has to be printed with 100% to remove the air inside the walls
+                            </li>
+                            <li>PLA could be exchanged for PETG due to its seemingly stronger waterresistance.</li>
+                            <li>A form of coating could be applied to the pitch housing. This could be a form of marine
+                                coating or epoxy.</li>
+                        </ul>
+
+                        </p>
+
+                        <p>By removing the utility plate and moving the necessary components closer to the towing point
+                            on top of the ROV, the frame design was adjusted to compress the overall height. The
+                            aluminium profiles were held together by the side walls that were made from acrylic. These
+                            walls cracked during the assembly and were considered a problem. Due to their fragility, it
+                            was deemed necessary to remove them. This led to designing corner brackets out of PLA.
+                            Simmilar brackets had already been tested during sea trail as four brackets were used to
+                            hold the utility plate in place.</p>
+                    </div>
+                    <div>
+                        <img class="my-center-image" src="images/outer-motor.png" alt="">
+                    </div>
+                    <div>
+                        <img class="my-center-image" src="images/xray-motors.png" alt="">
+                    </div>
+                    <div>
+                        <img class="my-center-image" src="images/cross-motors.JPG" alt="">
+                    </div>
+
+                    <div class="work-process-doc">
+                        <h3>Mountings</h3>
+                        <p>We designed 3D printed mountings for the ROV</p>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
                             <!-- Box -->
                             <div class="box box-image">
-                                <img src="http://placehold.it/800x600" class="my-box-image" alt="box image">
-                                <h4 class="box-title">Layouts</h4>
-                                <p class="box-description">Nothing but the basics: compiled CSS and JavaScript along
-                                    with a container.</p>
+                                <img src="images/bracket-1.JPG" class="my-box-image" alt="box image">
+                                <h4 class="box-title">Bracket 1</h4>
+
                             </div>
                             <!-- End of Box -->
                         </div>
                         <div class="col-md-3">
                             <!-- Box -->
                             <div class="box box-image">
-                                <img src="http://placehold.it/800x600" class="my-box-image" alt="box image">
-                                <h4 class="box-title">Colors</h4>
-                                <p class="box-description">Load the optional Bootstrap theme for a visually enhanced
-                                    experience.</p>
+                                <img src="images/bracket-2.JPG" class="my-box-image" alt="box image">
+                                <h4 class="box-title">Bracket 2</h4>
+
                             </div>
                             <!-- End of Box -->
                         </div>
                         <div class="col-md-3">
                             <!-- Box -->
                             <div class="box box-image">
-                                <img src="http://placehold.it/800x600" class="my-box-image" alt="box image">
-                                <h4 class="box-title">Components</h4>
-                                <p class="box-description">Multiple examples of grid layouts with all four tiers,
-                                    nesting, and more.</p>
+                                <img src="images/mounting-sonar.JPG" class="my-box-image" alt="box image">
+                                <h4 class="box-title">Sonar Mounting</h4>
+
                             </div>
                             <!-- End of Box -->
                         </div>
-                        <div class="col-md-3">
-                            <!-- Box -->
-                            <div class="box box-image">
-                                <img src="http://placehold.it/800x600" class="my-box-image" alt="box image">
-                                <h4 class="box-title">Headers</h4>
-                                <p class="box-description">Build around the jumbotron with a navbar and some basic grid
-                                    columns.</p>
-                            </div>
-                            <!-- End of Box -->
-                        </div>
+
                         <p class="text-center">
                             <a href="https://github.com/Towed-ROV/CAD-models"
                                 class="btn btn-lg btn-kickstarter m-b-20">Download
                                 Files</a>
                         </p>
                     </div>
-                    <div id="Structure">
-                        <div class="row section-header-doc wow fadeInUp"
-                            style="visibility: visible; animation-name: fadeInUp;">
-                            <h2>Structure
-                            </h2>
-                        </div>
-                        <div>
 
+
+                </div>
+                <!-- <div id="Structure">
+                    <div class="row section-header-doc wow fadeInUp"
+                        style="visibility: visible; animation-name: fadeInUp;">
+                        <h2>Structure
+                        </h2>
+                    </div>
+                    <div>
+
+                    </div>
+                </div> -->
+                <div id="Electronics">
+                    <div class="row section-header-doc wow fadeInUp"
+                        style="visibility: visible; animation-name: fadeInUp;">
+                        <h2>Electronics
+                        </h2>
+                        <p> We have enclosed all the electronic components in a water proof container by Blue
+                            Robotics.
+                            Thuis way we can play more with the design of the ROV making sure that our electronics
+                            are
+                            safe.</p>
+
+                    </div>
+
+                    <div>
+                        <img class="my-center-image" src="images/electronics box.png" alt="">
+                    </div>
+                    <div class="work-process-doc">
+                        <h3>Hardware Components</h3>
+                        <p>
+                            Here is the list of components/electronics used in this project </p>
+                        <div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sr. No</th>
+                                        <th scope="col">Components</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Vendor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Teensy 4.0
+                                        </td>
+                                        <td>2</td>
+                                        <td><a href="https://www.pjrc.com/store/teensy40.html" target="_blank">PJRC</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Raspberry PI (Model 2 v1.1)
+                                        </td>
+                                        <td>2</td>
+                                        <td><a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/"
+                                                target="_blank">RPI</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Ethernet Interface: Fathom-X
+                                        </td>
+                                        <td>2</td>
+                                        <td><a href="https://www.botblox.io/products/micro-ethernet-switch"
+                                                target="_blank">Blue Robotics</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Ethernet Switch: SwitchBlox Nano
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://www.botblox.io/products/micro-ethernet-switch"
+                                                target="_blank">Blotlox</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Stepper Motors (ROB-80420)
+                                        </td>
+                                        <td>2</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>Motor driver: Polulu DRV8825
+                                        </td>
+                                        <td>2</td>
+                                        <td><a href="https://www.pololu.com/product/2133" target="_blank">Polulu</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">7</th>
+                                        <td>Leak Sensor
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://bluerobotics.com/store/sensors-sonars-cameras/leak-sensor/sos-leak-sensor/"
+                                                target="_blank">Blue Robotics</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8</th>
+                                        <td>Leak Sensor Probes
+                                        </td>
+                                        <td>4</td>
+                                        <td><a href="https://bluerobotics.com/store/sensors-sonars-cameras/leak-sensor/sos-probes/"
+                                                target="_blank">Blue Robotics</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">9</th>
+                                        <td>Echo Sounder
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://bluerobotics.com/store/sensors-sonars-cameras/sonar/ping-sonar-r2-rp/"
+                                                target="_blank">Blue Robotics</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">10</th>
+                                        <td>Depth Sensor (MS5837-30BA1)
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://bluerobotics.com/store/sensors-sonars-cameras/sensors/bar30-sensor-r1/"
+                                                target="_blank">Blue Robotics</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">11</th>
+                                        <td>IMU (9 DOF)
+                                        </td>
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://www.adafruit.com/product/2472" target="_blank">Adafruit</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <tr>
+                                        <th scope="row">12</th>
+                                        <td>Side Scan Sonar (DeepVision)
+                                        </td>
+                                        <td>4</td>
+                                        <td><a href="https://deepvision.se/products/side-scan-sonars/"
+                                                target="_blank">Deep Vision</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">13</th>
+                                        <td>Servo Motor
+                                        </td>
+
+                                        <td>1</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">14</th>
+                                        <td>Camera
+                                        </td>
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">15</th>
+                                        <td>LED(subsea lumun)
+                                        </td>
+                                        </td>
+                                        <td>4</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">16</th>
+                                        <td>Fathom-X Tether Interface Board
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">17</th>
+                                        <td>Tether x 300m
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://bluerobotics.com/store/cables-connectors/cables/fathom-tether-nb-4p-26awg-r2/"
+                                                target="_blank">Blue Robotics</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">18</th>
+                                        <td>Tether management
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://bluerobotics.com/store/cables-connectors/tether-management/tms-asm-spool-r1-rp//"
+                                                target="_blank">Blue Robotics</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">19</th>
+                                        <td>USB to Mini-USB
+                                        </td>
+                                        <td>2</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">20</th>
+                                        <td>Ethernet
+                                        </td>
+                                        <td>1</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">21</th>
+                                        <td>Resistors - 330 Ω
+                                        </td>
+                                        <td>2</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">22</th>
+                                        <td>Capacitors - 1000 μF
+                                        </td>
+                                        <td>2</td>
+                                        <td><a href="https://www.google.com/" target="_blank">Google</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div id="Electronics">
-                        <div class="row section-header-doc wow fadeInUp"
-                            style="visibility: visible; animation-name: fadeInUp;">
-                            <h2>Electronics
-                            </h2>
-                            <p> We have enclosed all the electronic components in a water proof container by Blue
-                                Robotics.
-                                Thuis way we can play more with the design of the ROV making sure that our electronics
-                                are
-                                safe.</p>
-
-                        </div>
-
-                        <div>
-                            <img class="my-center-image" src="images/electronics box.png" alt="">
-                        </div>
-                        <div class="work-process-doc">
-                            <h3>Hardware Components</h3>
-                            <div>
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Sr. No</th>
-                                            <th scope="col">Components</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Vendor</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Teensy 4.0
-                                            </td>
-                                            <td>2</td>
-                                            <td><a href="https://www.pjrc.com/store/teensy40.html"
-                                                    target="_blank">PJRC</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Raspberry PI (Model 2 v1.1)
-                                            </td>
-                                            <td>2</td>
-                                            <td><a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/"
-                                                    target="_blank">RPI</a>
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Ethernet Interface: Fathom-X
-                                            </td>
-                                            <td>2</td>
-                                            <td><a href="https://www.botblox.io/products/micro-ethernet-switch"
-                                                    target="_blank">Blue Robotics</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Ethernet Switch: SwitchBlox Nano
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://www.botblox.io/products/micro-ethernet-switch"
-                                                    target="_blank">Blotlox</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Stepper Motors (ROB-80420)
-                                            </td>
-                                            <td>2</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">6</th>
-                                            <td>Motor driver: Polulu DRV8825
-                                            </td>
-                                            <td>2</td>
-                                            <td><a href="https://www.pololu.com/product/2133" target="_blank">Polulu</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Leak Sensor
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://bluerobotics.com/store/sensors-sonars-cameras/leak-sensor/sos-leak-sensor/"
-                                                    target="_blank">Blue Robotics</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">8</th>
-                                            <td>Leak Sensor Probes
-                                            </td>
-                                            <td>4</td>
-                                            <td><a href="https://bluerobotics.com/store/sensors-sonars-cameras/leak-sensor/sos-probes/"
-                                                    target="_blank">Blue Robotics</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">9</th>
-                                            <td>Echo Sounder
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://bluerobotics.com/store/sensors-sonars-cameras/sonar/ping-sonar-r2-rp/"
-                                                    target="_blank">Blue Robotics</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">10</th>
-                                            <td>Depth Sensor (MS5837-30BA1)
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://bluerobotics.com/store/sensors-sonars-cameras/sensors/bar30-sensor-r1/"
-                                                    target="_blank">Blue Robotics</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">11</th>
-                                            <td>IMU (9 DOF)
-                                            </td>
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://www.adafruit.com/product/2472"
-                                                    target="_blank">Adafruit</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <tr>
-                                            <th scope="row">12</th>
-                                            <td>Side Scan Sonar (DeepVision)
-                                            </td>
-                                            <td>4</td>
-                                            <td><a href="https://deepvision.se/products/side-scan-sonars/"
-                                                    target="_blank">Deep Vision</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">13</th>
-                                            <td>Servo Motor
-                                            </td>
-
-                                            <td>1</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">14</th>
-                                            <td>Camera
-                                            </td>
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">15</th>
-                                            <td>LED(subsea lumun)
-                                            </td>
-                                            </td>
-                                            <td>4</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">16</th>
-                                            <td>Fathom-X Tether Interface Board
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">17</th>
-                                            <td>Tether x 300m
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://bluerobotics.com/store/cables-connectors/cables/fathom-tether-nb-4p-26awg-r2/"
-                                                    target="_blank">Blue Robotics</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">18</th>
-                                            <td>Tether management
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://bluerobotics.com/store/cables-connectors/tether-management/tms-asm-spool-r1-rp//"
-                                                    target="_blank">Blue Robotics</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">19</th>
-                                            <td>USB to Mini-USB
-                                            </td>
-                                            <td>2</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">20</th>
-                                            <td>Ethernet
-                                            </td>
-                                            <td>1</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">21</th>
-                                            <td>Resistors - 330 Ω
-                                            </td>
-                                            <td>2</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">22</th>
-                                            <td>Capacitors - 1000 μF
-                                            </td>
-                                            <td>2</td>
-                                            <td><a href="https://www.google.com/" target="_blank">Google</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                    <div class="work-process-doc">
+                        <h3>Schematics</h3>
+                        <p>You can download the Schematics of the electronics circuits</p>
                     </div>
-                    <div id="GUI">
-                        <div class="row section-header-doc wow v2 fadeInUp"
-                            style="visibility: visible; animation-name: fadeInUp;">
-                            <h2>GUI
-                            </h2>
+
+                    <p class="text-center">
+                        <a href="https://github.com/Towed-ROV/CAD-models" target="_blank"
+                            class="btn btn-lg btn-kickstarter m-b-20">Download
+                            Files</a>
+                    </p>
+                </div>
+                <div id="Software">
+                    <div class="row section-header-doc wow v2 fadeInUp"
+                        style="visibility: visible; animation-name: fadeInUp;">
+                        <h2>Software
+                        </h2>
 
 
-                            <p> An interactive GUI is made to control, send commands and send/receive data to and
-                                from
-                                the
-                                ROV. Our GUI is developed in a javascript frontend framework React (Chakra UI)
-                            </p>
+                        <p> This section explains the software component of the ROV
+                        </p>
 
-                        </div>
 
-                        <div>
-                            <img class="my-center-image" src="images/gui.png" alt="">
-                        </div>
+                    </div>
 
-                        <div class="work-process-doc">
-                            <p>The GUI can be installed and run using the following commands</p>
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8 col-sm-12">
-                                    <div class="code-highlight ">
-                                        <!-- <span class="js-copy-to-clipboard copy-code">copy</span> -->
-                                        <pre><code class="language-git js-code">git clone https://github.com/Towed-ROV/gui.git   
+                    <div class="work-process-doc">
+                        <h3>Graphical User Interface</h3>
+                        <p> An interactive GUI is made to control, send commands and send/receive data to and
+                            from
+                            the
+                            ROV. Our GUI is developed in a javascript frontend framework React (Chakra UI)
+                        </p>
+                    </div>
+
+                    <div>
+                        <img class="my-center-image" src="images/gui-laptop.png" alt="">
+                    </div>
+
+                    <div class="work-process-doc">
+                        <p>The GUI can be installed and run using the following commands</p>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 col-sm-12">
+                                <div class="code-highlight ">
+                                    <!-- <span class="js-copy-to-clipboard copy-code">copy</span> -->
+                                    <pre><code class="language-git js-code">git clone https://github.com/Towed-ROV/gui.git   
 </code></pre>
-                                        <pre><code class="language-git js-code">cd gui  
+                                    <pre><code class="language-git js-code">cd gui  
 </code></pre>
-                                        <pre><code class="language-git js-code">npm install  
+                                    <pre><code class="language-git js-code">npm install  
 </code></pre>
-                                        <pre><code class="language-git js-code">npm run start   
+                                    <pre><code class="language-git js-code">npm run start   
 </code></pre>
-                                    </div>
                                 </div>
                             </div>
-
-                        </div>
-                    </div>
-                    <div id="Sonar">
-                        <div class="row section-header-doc wow fadeInUp"
-                            style="visibility: visible; animation-name: fadeInUp;">
-                            <h2>Side Scan Sonar
-                            </h2>
-
-                            <p> One of our payloads is the side scan sonar. The side scan sonar runs with an API from
-                                DeepVision. The side scan sonar gets a broad view scan of the ocean floor. The API
-                                provided
-                                by Deepvision does not provide real-time results, we have integrated it in our code to
-                                show
-                                real time result in our GUI.</p>
-
-                            // will add images of side scan sonar of our stream
-                            // code snippet how to run the Sonar API (unless we solve it through the GUI command)
                         </div>
 
                     </div>
-                    <div id="Camera">
-                        <div class="row section-header-doc wow fadeInUp"
-                            style="visibility: visible; animation-name: fadeInUp;">
-                            <h2>Camera
-                            </h2>
-                            <p> The camera can be used to strean real time video from ROV to our GUI and then we can use
-                                a
-                                machine learning model to detect and classify the required targets from the video. </p>
-                        </div>
 
-                        <div class="gallery">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="gallery__image"><a href="images/cam-1.png"></a><img
-                                            src="images/cam-1.png" class="img-responsive" alt="gallery thumb" /></a>
-                                    </div>
-                                </div><!-- // end .col-sm-4 col-md-3 -->
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="gallery__image"><a href="images/cam-2.png"><img src="images/cam-2.png"
-                                                class="img-responsive" alt="gallery thumb" /></a></div>
-                                </div><!-- // end .col-sm-4 col-md-3 -->
-
-
-                            </div><!-- // end .row -->
-                        </div><!-- // end .gallery -->
-
-
+                    <div class="work-process-doc">
+                        <h3>API</h3>
+                        <p> We have used FAST API for the data transfer between between the GUI, database and
+                            payloads on the ROV.</p>
                     </div>
-                    <div id="API">
-                        <div class="row section-header-doc wow fadeInUp"
-                            style="visibility: visible; animation-name: fadeInUp;">
-                            <h2>API
-                            </h2>
-                            <p> We have used FAST API for the data transfer between between the GUI, database and
-                                payloads on the ROV.</p>
-                        </div>
-                    </div>
-                    // data transfer diagram
-                    // code snippet how to run the api
 
-                    <!-- Accordion -->
-                    <ul class="accordion js-accordion">
-                        <li class="accordion-item accordion-open">
-                            <h4 class="accordion-title">Collaboratively administrate empowered markets via
-                                plug-and-play
-                                networks.</h4>
-                            <div class="accordion-description">Dynamically procrastinate B2C users after installed
-                                base
-                                benefits.
-                                Dramatically visualize customer directed convergence without revolutionary ROI.
-                                Efficiently unleash
-                                cross-media information without cross-media value. Quickly maximize timely
-                                deliverables
-                                for real-time schemas. Dramatically maintain clicks-and-mortar solutions without
-                                functional solutions.
-                                Completely synergize resource taxing relationships via premier niche markets. </div>
-                        </li>
-                        <li class="accordion-item accordion-open">
-                            <h4 class="accordion-title">Completely synergize resource taxing relationships via
-                                premier
-                                niche markets.</h4>
-                            <div class="accordion-description">Illo, rem temporibus natus consectetur, vero
-                                cupiditate
-                                voluptate unde quam,
-                                ipsum, ea incidunt veritatis aspernatur est sint ipsa quibusdam? Ea ratione
-                                accusamus
-                                voluptatibus, ut quasi
-                                voluptates possimus alias, nostrum.</div>
-                        </li>
-                        <li class="accordion-item accordion-open">
-                            <h4 class="accordion-title">Professionally cultivate one-to-one customer service with
-                                robust
-                                ideas. </h4>
-                            <div class="accordion-description">Amet quis suscipit modi animi quia veniam id, sed
-                                nihil?
-                                Necessitatibus
-                                expedita, velit, itaque tenetur quisquam impedit cumque eum. Dolorum, natus earum.
+                    <div>
+                        <img class="my-center-image" src="images/api.png" alt="">
+                    </div>
+
+                    <div class="work-process-doc">
+                        <p>The API can be installed and run using the following commands</p>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 col-sm-12">
+                                <div class="code-highlight ">
+                                    <!-- <span class="js-copy-to-clipboard copy-code">copy</span> -->
+                                    <pre><code class="language-git js-code">git clone https://github.com/Towed-ROV/api.git   
+</code></pre>
+                                    <pre><code class="language-git js-code">cd api/control-api  
+</code></pre>
+                                    <pre><code class="language-git js-code">python -m venv venv
+</code></pre>
+                                    <pre><code class="language-git js-code">venv\Scripts\activate
+</code></pre>
+                                    <pre><code class="language-git js-code">pip install -r requirements.txt  
+</code></pre>
+                                </div>
                             </div>
-                        </li>
-                        <li class="accordion-item accordion-open">
-                            <h4 class="accordion-title">Completely synergize resource taxing relationships via
-                                premier
-                                niche markets.</h4>
-                            <div class="accordion-description">Fugit impedit ea eveniet ullam distinctio et quisquam
-                                nam
-                                laudantium nemo
-                                cumque consequuntur magni quis unde voluptates velit temporibus, blanditiis,
-                                laboriosam
-                                minima.</div>
-                        </li>
-                    </ul>
-                    <!-- End of Accordion -->
+                        </div>
+
+                        <p>Then run the API using the following commands</p>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8 col-sm-12">
+                                <div class="code-highlight ">
+                                    <!-- <span class="js-copy-to-clipboard copy-code">copy</span> -->
+                                    <pre><code class="language-git js-code">cd app  
+</code></pre>
+                                    <pre><code class="language-git js-code">uvicorn main:app --reload   
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="work-process-doc">
+                        <h3>Trash Recognition</h3>
+                        <p>
+                            One of the tasks of the ROV is to stream / record videos of the ocean floor to find
+                            possible plastic waste or fishing gear. To tackle this challenge we used a machine
+                            learning model to detect and classify the plastic waste. We are
+                            not only concerned with “there’s something” but also need to know “what are we seeing”. This
+                            problem is a classification problem and since we can have multiple objects of the same or
+                            different type of the objects, we need to know which pixel corresponds to each object </p>
+                        <p>
+                            The data set was highly relevant to our use case and is published by a Japanese Research
+                            Organization JAMSTEC. The dataset contains 23 classes of objects underwater. </p>
+
+                        <p>The model used is Mask RCNN model by matterport. This model is trained on the COCO dataset by
+                            Microsoft. We used this model as our base and further built our model on top of it and
+                            performed annotation conversions as well as model configurations.</p>
+                    </div>
+
+                    <div class="gallery">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="gallery__image"><a href="images/cam-1.png"></a><img src="images/cam-1.png"
+                                        class="img-responsive" alt="gallery thumb" /></a>
+                                </div>
+                            </div><!-- // end .col-sm-4 col-md-3 -->
+                            <div class="col-sm-12 col-md-6">
+                                <div class="gallery__image"><a href="images/cam-2.png"><img src="images/cam-2.png"
+                                            class="img-responsive" alt="gallery thumb" /></a></div>
+                            </div><!-- // end .col-sm-4 col-md-3 -->
+
+
+                        </div><!-- // end .row -->
+                    </div><!-- // end .gallery -->
+
+
                 </div>
+
+                <div id="Payloads">
+                    <div class="row section-header-doc wow fadeInUp"
+                        style="visibility: visible; animation-name: fadeInUp;">
+                        <h2>Payloads
+                        </h2>
+
+                        <p> We can attache various payloads to the ROV accoding to our requirements.</p>
+
+
+                    </div>
+                    <div class="work-process-doc">
+                        <h3>Side Scan Sonar</h3>
+                        <p> One of our payloads is the side scan sonar. The side scan sonar runs with an API from
+                            DeepVision. The side scan sonar gets a broad view scan of the ocean floor. The API
+                            provided
+                            by Deepvision does not provide real-time results, we have integrated it in our code to
+                            show
+                            real time result in our GUI.</p>
+                        // will add images of side scan sonar of our stream
+                        // code snippet how to run the Sonar API
+
+                    </div>
+
+                </div>
+
+                <!-- Accordion -->
+                <!-- <ul class="accordion js-accordion">
+                    <li class="accordion-item accordion-open">
+                        <h4 class="accordion-title">Collaboratively administrate empowered markets via
+                            plug-and-play
+                            networks.</h4>
+                        <div class="accordion-description">Dynamically procrastinate B2C users after installed
+                            base
+                            benefits.
+                            Dramatically visualize customer directed convergence without revolutionary ROI.
+                            Efficiently unleash
+                            cross-media information without cross-media value. Quickly maximize timely
+                            deliverables
+                            for real-time schemas. Dramatically maintain clicks-and-mortar solutions without
+                            functional solutions.
+                            Completely synergize resource taxing relationships via premier niche markets. </div>
+                    </li>
+                    <li class="accordion-item accordion-open">
+                        <h4 class="accordion-title">Completely synergize resource taxing relationships via
+                            premier
+                            niche markets.</h4>
+                        <div class="accordion-description">Illo, rem temporibus natus consectetur, vero
+                            cupiditate
+                            voluptate unde quam,
+                            ipsum, ea incidunt veritatis aspernatur est sint ipsa quibusdam? Ea ratione
+                            accusamus
+                            voluptatibus, ut quasi
+                            voluptates possimus alias, nostrum.</div>
+                    </li>
+                    <li class="accordion-item accordion-open">
+                        <h4 class="accordion-title">Professionally cultivate one-to-one customer service with
+                            robust
+                            ideas. </h4>
+                        <div class="accordion-description">Amet quis suscipit modi animi quia veniam id, sed
+                            nihil?
+                            Necessitatibus
+                            expedita, velit, itaque tenetur quisquam impedit cumque eum. Dolorum, natus earum.
+                        </div>
+                    </li>
+                    <li class="accordion-item accordion-open">
+                        <h4 class="accordion-title">Completely synergize resource taxing relationships via
+                            premier
+                            niche markets.</h4>
+                        <div class="accordion-description">Fugit impedit ea eveniet ullam distinctio et quisquam
+                            nam
+                            laudantium nemo
+                            cumque consequuntur magni quis unde voluptates velit temporibus, blanditiis,
+                            laboriosam
+                            minima.</div>
+                    </li>
+                </ul> -->
+                <!-- End of Accordion -->
             </div>
         </div>
     </div>
@@ -650,9 +983,9 @@ Surjith S M / @surjithctly
                 <ul class="nav footer-menu">
                     <li><a href="about.html">About</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <!-- <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="#">Mobile App</a></li>
-                    <li><a href="presskit.zip">PressKit</a></li>
+                    <li><a href="presskit.zip">PressKit</a></li> -->
                 </ul>
                 <p>Copyright © 2021. TOWED ROV.
                     <br class="small-divide"> All rights reserved
